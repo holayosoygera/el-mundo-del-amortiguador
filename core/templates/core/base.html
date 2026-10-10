@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EL MUNDO DEL AMORTIGUADOR{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+                <div class="header-logo">
+                    <img src="{% static 'img/logo.svg'%}" alt="El Mundo del Amortiguador - Logo">
+                </div>
+                <ul class="nav-bar">
+                    <li><a href='#inicio'>INICIO</a></li>
+                    <li><a href='#'>SERVICIOS</a></li>
+                    <li><a href='#'>CATÁLOGO</a></li>
+                    <li><a href='#'>CONTACTO</a></li>
+                </ul>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+                <div class="footer-1">
+                    <img class="logo-footer" src="{% static 'img/logo.svg'%}" alt="El Mundo del Amortiguador - Logo">
+                    <p class="slogan-footer">Ingeniería de precisión,<br>trato humano.</p>
+                </div>
+                <div class="footer-2">
+                    <p class="footer-title">Navegación</p>
+                    <a href="#">Inicio</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Catálogo</a>
+                    <a href="#">Contacto</a>
+                </div>
+                <div class="footer-3">
+                    <div>
+                        <p class="footer-title">Contacto</p>
+                    </div>
+                    <div class="ft-info-cont-3">
+                        <div>
+                            <p class="footer-phone">Tel. 442-125-7702</p>
+                            <a class="footer-whatsapp" href="#">WhatsApp</a>
+                        </div>
+                        <div class="address-footer">
+                            <p>Acceso a 112-B, PARQUE INDUSTRIAL,Jurica, 76127 Santiago de Querétaro, Querétaro.</p>
+                        </div>
+                    </div>
+                </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+body{
+    background-color: #121C31;
+    min-height: 100vh;
+}
+
+.page-wrapper{
+    max-width: 1750px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/*===============BASE.HTML=============*/
+
+/*====================================
+            BARRA DE NAVEGACIÓN
+======================================*/
+
+header{
+    background-color: #121C31;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 350px;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-bar li,
+.nav-bar a {
+    font-family: 'Teko';
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+
+/*====================================
+======================================*/
+
+/*====================================
+                FOOTER
+======================================*/
+
+footer{
+    background-color: #121C31;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.footer-1{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.footer-2{
+    height: 100%;
+    display: flex;
+    flex:0 0 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap:10px;
+}
+
+.footer-3{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 300px;
+}
+
+.ft-info-cont-3{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo-footer{
+    width: 200px;
+}
+
+.slogan-footer{
+    max-width: 180px;
+    font-family: 'Teko';
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    line-height: 0.9;
+}
+
+.footer-title{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+.footer-2 a{
+    font-family: 'Inter';
+    font-weight: 100;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-phone{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+.footer-whatsapp{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    color: #E65F2B;
+    text-decoration: none;
+}
+
+.address-footer{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    max-width: 350px;
+    margin-top: auto;
+}
+/*====================================
+======================================*/
+
+/*====================================
+                INDEX
+======================================*/
+
+.hero{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    padding: 60px 80px;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(18, 28, 49, 1.5),
+        rgba(18, 28, 49, 0.3)
+    ),
+    url('../img/hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+}
+
+.hero-title{
+    font-family: 'Teko';
+    font-weight: 600;
+    font-size: 48px;
+    color: white;
+    max-width: 500px;
+    line-height: 1;
+}
+
+.hero-subtitle{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    max-width: 500px;
+}
+
+.hero-button{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+
+    border-radius: 10px;
+    max-width: 200px;
+    color: white;
+    background-color: #E65F2B;
+    padding: 10px;
+}
