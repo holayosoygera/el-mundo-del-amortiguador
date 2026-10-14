@@ -1,6 +1,8 @@
 {% extends 'core/base.html' %}
+{% load static %}
 {% block content %}
 
+<!-- INICIO --> 
 <section class="hero" id="inicio">
     <div class="hero-container">
         <h1 class="hero-title">INGENIERÍA DE PRECISIÓN, <br>TRATO HUMANO.</h1>
@@ -8,5 +10,92 @@
         <button class="hero-button">AGENDA TU CITA</button>
     </div>
 </section>
+
+<!-- NOSOTROS --> 
+<section class="about-us">
+    <div>
+        <h1 class="about-us-title">MECÁNICA DE CONFIANZA DESDE 2006</h1>
+    </div>
+    <div>
+        <h2 class="about-us-subtitle">Desde 2006, en <span class="text-orange">El Mundo del Amortiguador</span> nos hemos ganado la confianza de las familias y automovilistas en <span class="text-orange">Querétaro.</span> Somos un taller mecánico general comprometido en mantener tu vehículo en óptimas condiciones, <span class="text-orange">sin complicaciones ni tecnicismos innecesarios.</span></h2>
+    </div>
+</section>
+
+<!-- MARCAS ALIADAS --> 
+<section class="our-brands">
+    <div class="top-brands">
+        <h1 class="brands-title">NUESTRAS MARCAS ALIADAS DE CONFIANZA</h1>
+        <h2 class="brands-subtitle">Trabajamos exclusivamente con líderes mundiales en tencología de suspensión y amortiguadores para garantizar calidad y rendimiento.</h2>
+    </div>
+    <div class="brands-container">
+        {% for brand in brands %}
+            <div class="b-container">
+                <img class="b-logo" src="{% static 'img/logo-brands/'%}{{ brand}}">
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- NUESTROS SERVICIOS --> 
+<section class="services" id="servicios">
+    <div class="top-services">
+        <div class="top-services-1">
+            <h1 class="services-title">NUESTROS SERVICIOS</h1>
+            <h2 class="services-subtitle">Soluciones mecánicas confiables para mantener tu auto en óptimas condiciones. Diagnóstico, mantenimiento y reparación con honestidad.</h2>
+        </div>
+        <div>
+            <img src="{% static 'img/car-png.png' %}" alt="car-png">
+        </div>
+    </div>
+
+    <div class="service-cards">
+            {% for service in services %}
+                <div class="service-card">
+                    <img class="service-icon" src="{% static 'img/icon-services/'%}{{service.icon}}" alt="{{service.title}}">
+                    <div class="service-info">
+                        <h3 class="service-title">{{ service.title }}</h3>
+                        <p class="service-text">{{ service.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</section>
+
+<!-- CONTACTO --> 
+<section class="contacto" id="contacto">
+    <div class="info-contacto">
+        <h1 class="info-title">AGENDA TU CITA CON NOSOTROS</h1>
+        <h2 class="info-subtitle">Medios de Contacto</h2>
+        <div class="info-containers">
+            <div class="info-container-1">
+                <div class="info-container">
+                    <i class="bi bi-geo-alt-fill" style="color: #E65F2B; font-size: 24px;"></i>
+                    <p>Acceso a 112-B, PARQUE INDUSTRIAL, Jurica, 76127 Santiago de Querétaro, Querétaro. </p>
+                </div>
+                <div class="info-container">
+                    <i class="bi bi-telephone-inbound-fill" style="color: #E65F2B; font-size: 24px;"></i>
+                    <p>442 125 7702</p>
+                </div>
+                <div class="info-container">
+                    <i class="bi bi-whatsapp" style="color: #E65F2B; font-size: 24px;"></i>
+                    <p>442-XXX-XXXX</p>
+                </div>
+            </div>
+            <div class="info-container-2">
+                <div class="info-container">
+                    <i class="bi bi-clock" style="color: #E65F2B; font-size: 24px;"></i>
+                    <p>Lunes - Viernes 9:00a.m. - 17:30 p.m.</p>
+                    <p>Sábado 9:00 a.m. - 14:00 p.m.</p>
+                </div>
+            </div>
+        </div>
+    <div class="form">
+
+    </div>
+    <div class="whatsapp">
+        
+    </div>
+</section>
+
 
 {% endblock %}
