@@ -221,11 +221,16 @@ footer{
     font-family: 'Inter';
     font-weight: 600;
     font-size: 18px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border-radius: 10px;
     max-width: 200px;
     color: white;
     background-color: #E65F2B;
+    text-decoration: none;
     padding: 10px;
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -391,6 +396,11 @@ footer{
     align-items: center;
 }
 
+.car-png{
+    width: 600px;
+    height: auto;
+}
+
 .top-services-1{
     display: flex;
     flex-direction: column;
@@ -433,6 +443,21 @@ footer{
     gap: 10px;
     border-radius: 30px;
     background-color: #C9CCD3;
+
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px transparent solid;
+}    
+
+.service-card:hover{
+    transform: translateY(-6px);
+    background-color: #ffffff;
+    box-shadow: 0 12px 25px 0.25;
+    border-color: #E65F2B;
+}
+
+.service-card i{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .service-icon{
@@ -475,7 +500,17 @@ footer{
 ======================================*/
 
 .contacto{
-    padding: 60px 80px;
+    padding: 100px 80px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-container{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: space-between;
 }
 
 .info-title{
@@ -493,9 +528,20 @@ footer{
     color: #FFFFFF;
 }
 
-.info-containers{
+.container-1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-1-1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-1-2{
+    padding-bottom: 20px;
 }
 
 .info-container{
@@ -511,3 +557,105 @@ footer{
     gap:10px;
 }
 
+.whatsapp-contacto{
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 600;
+    color: #E65F2B;
+    text-decoration: none;
+}
+
+/*  MODAL CSS  */
+
+/* --- Modal 100% Nativo (Sin Bootstrap) --- */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.custom-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal-box {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #E65F2B;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.custom-modal-title {
+    color: #E65F2B;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.custom-modal-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.custom-modal-body {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.custom-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.custom-btn-cerrar {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.custom-btn-whatsapp {
+    background-color: #E65F2B;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.custom-btn-whatsapp:hover {
+    opacity: 0.9;
+    color: #fff;
+}
