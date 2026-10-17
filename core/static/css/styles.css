@@ -835,15 +835,25 @@ footer{
     }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 900px){
     
+    header,
+    .page-wrapper,
+    .hero,
+    .about-us,
+    .our-brands,
+    .services,
+    .contacto{
+        width: 100vw; 
+        max-width: 100%; 
+        box-sizing: border-box;
+    }
+
     header{
         position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     footer{
