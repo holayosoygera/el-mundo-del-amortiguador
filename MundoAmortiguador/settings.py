@@ -26,7 +26,13 @@ SECRET_KEY = 'django-insecure-s$_xa3_3_cf8m#e=)_o&dst%o7yw&nlcn(p(bbos63_y@el3!c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'el-mundo-del-amortiguador.onrender.com', 
+    '.onrender.com', 
+    'elmundodelamortiguador.com.mx', 
+    '.elmundodelamortiguador.com.mx', 
+    'localhost', 
+    '127.0.0.1']
 
 
 # Application definition
