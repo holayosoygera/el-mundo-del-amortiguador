@@ -71,6 +71,15 @@ header{
     color: #C9CCD3;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem; /* Puedes hacer el icono más grande o chico aquí */
+    cursor: pointer;
+}
+
 /*====================================
 ======================================*/
 
@@ -108,7 +117,6 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex: 0 0 300px;
 }
 
 .ft-info-cont-3{
@@ -294,7 +302,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 80px;
+    padding: 100px 80px;
     background-color: #C9CCD3;
     gap:20px;
 }
@@ -500,7 +508,7 @@ footer{
 ======================================*/
 
 .contacto{
-    padding: 100px 80px;
+    padding: 100px 100px;
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -511,6 +519,8 @@ footer{
     flex-direction: row;
     gap: 60px;
     justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
 }
 
 .info-title{
@@ -532,6 +542,13 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+}
+
+.container-2{
+    display:flex;
+    flex: 1;
+    min-height: 100%;
 }
 
 .container-1-1{
@@ -542,6 +559,7 @@ footer{
 
 .container-1-2{
     padding-bottom: 20px;
+    width: 100%;
 }
 
 .info-container{
@@ -565,10 +583,18 @@ footer{
     text-decoration: none;
 }
 
-/*  MODAL CSS  */
+.map-maps{
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 15px;
+    display: block;
+}
 
-/* --- Modal 100% Nativo (Sin Bootstrap) --- */
-.custom-modal-overlay {
+/* MODAL */
+
+/* --- Estilos para el Modal de Catálogo --- */
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -584,12 +610,13 @@ footer{
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.custom-modal-overlay.active {
+/* Esta clase es la que activa el JavaScript para mostrarlo */
+.modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-.custom-modal-box {
+.modal-box {
     background-color: #1a1a1a;
     color: #fff;
     border: 1px solid #E65F2B;
@@ -600,7 +627,7 @@ footer{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.custom-modal-header {
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -609,13 +636,15 @@ footer{
     margin-bottom: 15px;
 }
 
-.custom-modal-title {
+.modal-header h4 {
+    font-family: 'Teko';
+    font-weight: 400;
     color: #E65F2B;
-    font-size: 1.25rem;
+    font-size: 26px;
     margin: 0;
 }
 
-.custom-modal-close {
+.modal-close {
     background: none;
     border: none;
     color: #fff;
@@ -623,12 +652,15 @@ footer{
     cursor: pointer;
 }
 
-.custom-modal-body {
+.modal-body {
+    font-family: 'Inter';
+    font-weight: 200;
+    font-size: 16px;
     margin-bottom: 20px;
     line-height: 1.5;
 }
 
-.custom-modal-footer {
+.modal-footer {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -636,7 +668,9 @@ footer{
     padding-top: 15px;
 }
 
-.custom-btn-cerrar {
+.btn-cerrar {
+    font-family: 'Inter';
+    font-weight: 200;
     background-color: #444;
     color: #fff;
     border: none;
@@ -645,7 +679,13 @@ footer{
     cursor: pointer;
 }
 
+.btn-cerrar:hover {
+    background-color: #555;
+}
+
 .custom-btn-whatsapp {
+    font-family: 'Teko';
+    font-size: 18px;
     background-color: #E65F2B;
     color: #fff;
     border: none;
@@ -658,4 +698,339 @@ footer{
 .custom-btn-whatsapp:hover {
     opacity: 0.9;
     color: #fff;
+}
+
+.map-maps{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*TABLET MEDIA*/
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    header{
+        position: relative;
+    }
+
+    .footer-2{
+        align-items: center;
+        text-align: start;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    
+    .nav-bar {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        border-bottom: 2px solid #E65F2B;
+        padding: 20px 0;
+        text-align: center;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    .nav-bar.active {
+        display: flex ;
+        flex-direction: column; 
+    }
+
+/*--------------SOBRE NOSOTROS-----------------*/ 
+    .about-us-title{
+        padding: 0 60px;
+        line-height: 1;
+    }
+
+    .about-us-subtitle{
+        padding: 20px 30px;
+        text-align: justify;
+    }
+
+
+/*--------------SECCIÓN DE MARCAS---------------------*/ 
+    .brands-title{
+        padding: 0 30px;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .brands-subtitle{
+        padding: 20px 30px;
+        text-align: justify;
+    }
+
+    .brands-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        padding: 0 30px;
+        justify-content: center;
+    }
+
+    .b-container{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .b-logo{
+        max-width: 100%;
+        height: auto;
+    }
+
+/*-----------------NUESTROS SERVICIOS------------------*/ 
+
+    .services-title{
+        text-align: center;
+        padding: 10px 60px;
+    }
+
+    .services-subtitle{
+        text-align: justify;
+        text-justify: inter-word;
+        padding: 0 20px 30px;
+    }
+
+    .car-png{
+        display: none;
+    }
+
+    .service-cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+        padding: 0 10px;
+        justify-content: center;
+    }
+
+    .service-card{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .service-card:last-child{
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 100%;
+        max-width: calc(50% -5px);
+    }
+
+/*-----------------CONTACTO------------------*/ 
+    .p-container{
+        flex-direction: column;
+    }
+
+    .container-1-1{
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    
+    header{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2.5rem;
+        cursor: pointer;
+        padding: 5px;
+        line-height: 1;
+    }
+
+    .nav-bar {
+        display: none !important; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a; 
+        border-bottom: 2px solid #E65F2B;
+        padding: 20px 0;
+        text-align: center;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        z-index: 1000;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .nav-bar li,
+    .nav-bar a {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .nav-bar.active {
+        display: flex !important; 
+        flex-direction: column;
+    }
+    
+    .hero {
+        padding: 40px 20px;
+        min-height: 80vh;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-container {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-button {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* 2. SECCIÓN SOBRE NOSOTROS */
+    .about-us {
+        padding: 60px 20px;
+    }
+
+    .about-us-title {
+        font-size: 32px;
+        padding: 0 10px;
+        line-height: 1;
+    }
+
+    .about-us-subtitle {
+        font-size: 18px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    /* 3. SECCIÓN DE MARCAS */
+    .our-brands {
+        padding: 60px 20px;
+    }
+
+    .brands-title {
+        font-size: 34px;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .brands-subtitle {
+        font-size: 18px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .brands-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Una sola columna para las marcas en celular */
+        gap: 15px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    .b-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 4. SECCIÓN DE SERVICIOS */
+    .services {
+        padding: 60px 20px;
+    }
+
+    .top-services {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .car-png {
+        display: none; /* Ocultamos la imagen grande del carro para ganar espacio vertical */
+    }
+
+    .services-title {
+        font-size: 34px;
+        text-align: center;
+        line-height: 1;
+        padding: 0;
+    }
+
+    .services-subtitle {
+        font-size: 18px;
+        text-align: center;
+        padding: 10px 0 20px;
+    }
+
+    .service-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto; /* Permite que la tarjeta crezca si el texto es largo */
+        padding: 15px;
+    }
+
+    /* 5. SECCIÓN DE CONTACTO Y FOOTER */
+    .contacto {
+        padding: 60px 20px;
+    }
+
+    .p-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .info-title {
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    .info-subtitle {
+        font-size: 18px;
+    }
+
+    .info-container {
+        font-size: 16px;
+    }
+
+    .container-1-1{
+        padding-bottom: 30px;
+    }
 }

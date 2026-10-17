@@ -1,41 +1,50 @@
-// Función global para mostrar el modal de aviso
-window.mostrarAvisoNoDisponible = function(event) {
+window.avisoNoDisponible = function(event){
     event.preventDefault();
 
-    // 1. Buscamos si el modal ya existe en la página
-    let modalOverlay = document.getElementById('miModalPersonalizado');
+    let modalOverlay = document.getElementById('modalCatalogoEnDesarrollo')
 
-    // 2. Si no existe, lo creamos dinámicamente
-    if (!modalOverlay) {
-        const modalHtml = `
-        <div id="miModalPersonalizado" class="custom-modal-overlay">
-            <div class="custom-modal-box">
-                <div class="custom-modal-header">
-                    <h5 class="custom-modal-title">Aviso importante</h5>
-                    <button type="button" class="custom-modal-close" onclick="cerrarModal()">&times;</button>
+    if (!modalOverlay){
+        const modalHtml=`
+        <div id="modalCatalogoEnDesarrollo" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h4>¡Estamos trabajando en ello!</h4>
+                    <button type="button" class="modal-close" onclick="cerrarModal()">&times;</button>
                 </div>
-                <div class="custom-modal-body">
-                    Por el momento este servicio no está disponible de forma automática. ¡Contáctanos directamente por WhatsApp para atenderte!
+                <div class="modal-body">
+                    Aún estamos trabajando en nuestra sección de catálogo. Si tienes alguna duda o buscas alguna cotización, contáctanos directamente. 
                 </div>
-                <div class="custom-modal-footer">
-                    <button type="button" class="custom-btn-cerrar" onclick="cerrarModal()">Cerrar</button>
-                    <a href="https://wa.me/5214421277702?text=Buen%20d%C3%ada,%20me%20gustar%C3%ada%20cotizar%20un%20servicio" class="custom-btn-whatsapp" target="_blank">Ir a WhatsApp</a>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
+                    <a href="https://wa.me/5214421277702?text=Buen%20d%C3%ada,%20tengo%20una%20duda%20sobre%20un%20servicio%20o%20refacción" class="custom-btn-whatsapp" target="_blank">WhatsApp</a>
                 </div>
             </div>
         </div>`;
-        
+
         document.body.insertAdjacentHTML('beforeend', modalHtml);
-        modalOverlay = document.getElementById('miModalPersonalizado');
+        modalOverlay = document.getElementById('modalCatalogoEnDesarrollo'); 
     }
 
-    // 3. Mostramos el modal activando su clase CSS
     modalOverlay.classList.add('active');
+
 };
 
-// Función global para cerrar el modal
-window.cerrarModal = function() {
-    const modalOverlay = document.getElementById('miModalPersonalizado');
-    if (modalOverlay) {
+window.cerrarModal = function(){
+    const modalOverlay = document.getElementById('modalCatalogoEnDesarrollo');
+    if (modalOverlay){
         modalOverlay.classList.remove('active');
     }
 };
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    console.log("¡El script del menú está funcionando!"); 
+    const menuToggle = document.getElementById("menuToggle");
+    const navBar = document.querySelector(".nav-bar"); 
+
+    if (menuToggle && navBar) {
+        menuToggle.addEventListener("click", function() {
+            navBar.classList.toggle("active");
+        });
+    }
+});
