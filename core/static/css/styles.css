@@ -97,9 +97,49 @@ header{
 footer{
     background-color: #121C31;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.footer-hr{
+    color: #D5DFE8;
+}
+
+.footer-info1{
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 30px;
+}
+
+.footer-info2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.copyrights{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.copyrights a{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+
+    color: #D5DFE8;
+    text-decoration: none;
+}
+
+.copyrights p{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+
+    color: #D5DFE8;
 }
 
 .footer-1{
@@ -712,7 +752,117 @@ footer{
     height: 100%;
 }
 
+/* Modal Aviso de Privacidad */
 
+.screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(4px); /* Efecto difuminado elegante en el fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo el contenido */
+    opacity: 0;
+    pointer-events: none; /* Oculto e ininteractivo por defecto */
+    transition: opacity 0.3s ease;
+}
+
+.screen-overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* Permite interactuar cuando está visible */
+}
+
+/* 2. Caja interna donde se inyecta el contenido (Aviso de Privacidad) */
+.screen-content {
+    background-color: #121C31; /* Tono oscuro acorde a tu diseño */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px; /* Ancho máximo para que no se extienda de más */
+    max-height: 85vh; /* Altura máxima para que quepa en pantallas chicas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Mantiene los bordes redondeados limpios */
+}
+
+/* 3. Estilos internos para el contenedor legal dentro del modal */
+.legal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+.legal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.legal-title {
+    font-family: 'Inter';
+    font-size: 20px;
+    color: #D5DFE8;
+    font-weight: 600;
+    margin: 0;
+}
+
+.legal-subtitle {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    color: #E65F2B; /* Color de acento */
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.legal-body {
+    overflow-y: auto; /* Agrega scroll interno si el texto es largo */
+    max-height: calc(70vh - 80px);
+    padding-right: 5px;
+}
+
+.legal-body p {
+    font-family: 'Inter';
+    color: #b0b0b5;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* 4. Botón de cierre (la equis) */
+.close-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f6f6f6;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    border-color: #E65F2B;
+    color: #E65F2B;
+    background-color: rgba(0, 177, 186, 0.1);
+}
 
 /*TABLET MEDIA*/
 @media screen and (min-width: 768px) and (max-width: 1024px){

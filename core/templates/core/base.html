@@ -39,6 +39,7 @@
             {% endblock %}
         </main>
         <footer>
+            <div class="footer-info1">
                 <div class="footer-1">
                     <img class="logo-footer" src="{% static 'img/logo.svg'%}" alt="El Mundo del Amortiguador - Logo">
                     <p class="slogan-footer">Ingeniería de precisión,<br>trato humano.</p>
@@ -64,7 +65,23 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="footer-info2">
+            <div>
+                <hr class="hr-footer">
+            </div>
+            <div class="copyrights">
+                <p>&copy;El Mundo del Amortiguador 2026</p>
+                <a  href="#"id="aviso-priv">Aviso de Privacidad</a>
+            </div>
     </footer>
+
+    <!--Overlay para aviso de privacidad-->
+    <div id="overlay" class="screen-overlay">
+        <div class="screen-content">
+            <!--Inyección JS-->
+        </div>
+    </div>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
